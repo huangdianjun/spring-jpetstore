@@ -33,13 +33,23 @@
                     </headerDefinitions>
                 </configuration>
             </plugin>
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-compiler-plugin</artifactId>-->
+<!--                <version>${org.apache.maven.plugins.maven-compiler-plugin.version}</version>-->
+<!--                <configuration>-->
+<!--                    <source>${java-version}</source>-->
+<!--                    <target>${java-version}</target>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>${org.apache.maven.plugins.maven-compiler-plugin.version}</version>
+                <version>2.5.1</version>
                 <configuration>
-                    <source>${java-version}</source>
-                    <target>${java-version}</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>
             <plugin>
@@ -87,33 +97,62 @@
                     </execution>
                 </executions>
             </plugin>
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-war-plugin</artifactId>-->
+<!--                <version>${org.apache.maven.plugins.maven-war-plugin.version}</version>-->
+<!--                <configuration>-->
+<!--                    <warName>${project.artifactId}</warName>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
-                <version>${org.apache.maven.plugins.maven-war-plugin.version}</version>
+                <version>2.2</version> <!-- 升级到支持 JDK17 的新版本 -->
                 <configuration>
                     <warName>${project.artifactId}</warName>
                 </configuration>
             </plugin>
+<!--            <plugin>-->
+<!--                <groupId>org.apache.tomcat.maven</groupId>-->
+<!--                <artifactId>tomcat7-maven-plugin</artifactId>-->
+<!--                <version>${org.apache.tomcat.maven.version}</version>-->
+<!--                <configuration>-->
+<!--                    <uriEncoding>UTF-8</uriEncoding>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
             <plugin>
                 <groupId>org.apache.tomcat.maven</groupId>
                 <artifactId>tomcat7-maven-plugin</artifactId>
-                <version>${org.apache.tomcat.maven.version}</version>
+                <version>2.1</version>
                 <configuration>
                     <uriEncoding>UTF-8</uriEncoding>
+                    <!-- 这里改成你想用的端口，比如 8088 -->
+                    <port>8088</port>
                 </configuration>
             </plugin>
         </plugins>
     </build>
     <repositories>
+<!--        <repository>-->
+<!--            <snapshots>-->
+<!--                <enabled>false</enabled>-->
+<!--            </snapshots>-->
+<!--            <id>central</id>-->
+<!--            <name>Maven Central repository</name>-->
+<!--            <url>http://repo1.maven.org/maven2/</url>-->
+<!--        </repository>-->
+<!--        <repository>-->
+<!--            <id>amateras</id>-->
+<!--            <name>Project Amateras Maven2 Repository</name>-->
+<!--            <url>http://amateras.sourceforge.jp/mvn/</url>-->
+<!--        </repository>-->
+        <!-- 优先阿里云（快、稳定） -->
         <repository>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-            <id>central</id>
-            <name>Maven Central repository</name>
-            <url>http://repo1.maven.org/maven2/</url>
+            <id>aliyun</id>
+            <url>https://maven.aliyun.com/repository/public</url>
         </repository>
+        <!-- 阿里云没有的特殊包，再去日本仓库 -->
         <repository>
             <id>amateras</id>
             <name>Project Amateras Maven2 Repository</name>
@@ -619,23 +658,7 @@
         <!-- </dependency> -->
         <!-- == End Unit Test == -->
 
-        <!-- == Begin Amateras == -->
-        <dependency>
-            <groupId>jp.sf.amateras.functions</groupId>
-            <artifactId>functions</artifactId>
-            <version>${jp.sf.amateras.functions.version}</version>
-            <exclusions>
-                <exclusion>
-                    <artifactId>jsonic</artifactId>
-                    <groupId>net.arnx</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>log4j</artifactId>
-                    <groupId>log4j</groupId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <!-- == End Amateras == -->
+
 
         <dependency>
             <groupId>com.h2database</groupId>
@@ -737,6 +760,6 @@
         <com.google.code.findbugs.version>1.3.9</com.google.code.findbugs.version>
         <com.google.code.maven-license-plugin.version>1.4.0</com.google.code.maven-license-plugin.version>
         <encoding>UTF-8</encoding>
-        <java-version>1.6</java-version>
+        <java-version>1.8</java-version>
     </properties>
 </project>

@@ -19,92 +19,92 @@
         </tr>
         <tr>
             <td>Card Type:</td>
-            <td>${f:h(order.cardType)}</td>
+            <td>${fn:escapeXml(order.cardType)}</td>
         </tr>
         <tr>
             <td>Card Number:</td>
-            <td>${f:h(order.creditCard)}*Fakenumber!</td>
+            <td>${fn:escapeXml(order.creditCard)}*Fakenumber!</td>
         </tr>
         <tr>
             <td>Expiry Date (MM/YYYY):</td>
-            <td>${f:h(order.expiryDate)}</td>
+            <td>${fn:escapeXml(order.expiryDate)}</td>
         </tr>
         <tr>
             <th colspan="2">Billing Address</th>
         </tr>
         <tr>
             <td>First name:</td>
-            <td>${f:h(order.billToFirstName)}</td>
+            <td>${fn:escapeXml(order.billToFirstName)}</td>
         </tr>
         <tr>
             <td>Last name:</td>
-            <td>${f:h(order.billToLastName)}</td>
+            <td>${fn:escapeXml(order.billToLastName)}</td>
         </tr>
         <tr>
             <td>Address 1:</td>
-            <td>${f:h(order.billAddress1)}</td>
+            <td>${fn:escapeXml(order.billAddress1)}</td>
         </tr>
         <tr>
             <td>Address 2:</td>
-            <td>${f:h(order.billAddress2)}</td>
+            <td>${fn:escapeXml(order.billAddress2)}</td>
         </tr>
         <tr>
             <td>City:</td>
-            <td>${f:h(order.billCity)}</td>
+            <td>${fn:escapeXml(order.billCity)}</td>
         </tr>
         <tr>
             <td>State:</td>
-            <td>${f:h(order.billState)}</td>
+            <td>${fn:escapeXml(order.billState)}</td>
         </tr>
         <tr>
             <td>Zip:</td>
-            <td>${f:h(order.billZip)}</td>
+            <td>${fn:escapeXml(order.billZip)}</td>
         </tr>
         <tr>
             <td>Country:</td>
-            <td>${f:h(order.billCountry)}</td>
+            <td>${fn:escapeXml(order.billCountry)}</td>
         </tr>
         <tr>
             <th colspan="2">Shipping Address</th>
         </tr>
         <tr>
             <td>First name:</td>
-            <td>${f:h(order.shipToFirstName)}</td>
+            <td>${fn:escapeXml(order.shipToFirstName)}</td>
         </tr>
         <tr>
             <td>Last name:</td>
-            <td>${f:h(order.shipToLastName)}</td>
+            <td>${fn:escapeXml(order.shipToLastName)}</td>
         </tr>
         <tr>
             <td>Address 1:</td>
-            <td>${f:h(order.shipAddress1)}</td>
+            <td>${fn:escapeXml(order.shipAddress1)}</td>
         </tr>
         <tr>
             <td>Address 2:</td>
-            <td>${f:h(order.shipAddress2)}</td>
+            <td>${fn:escapeXml(order.shipAddress2)}</td>
         </tr>
         <tr>
             <td>City:</td>
-            <td>${f:h(order.shipCity)}</td>
+            <td>${fn:escapeXml(order.shipCity)}</td>
         </tr>
         <tr>
             <td>State:</td>
-            <td>${f:h(order.shipState)}</td>
+            <td>${fn:escapeXml(order.shipState)}</td>
         </tr>
         <tr>
             <td>Zip:</td>
-            <td>${f:h(order.shipZip)}</td>
+            <td>${fn:escapeXml(order.shipZip)}</td>
         </tr>
         <tr>
             <td>Country:</td>
-            <td>${f:h(order.shipCountry)}</td>
+            <td>${fn:escapeXml(order.shipCountry)}</td>
         </tr>
         <tr>
             <td>Courier:</td>
-            <td>${f:h(order.courier)}</td>
+            <td>${fn:escapeXml(order.courier)}</td>
         </tr>
         <tr>
-            <td colspan="2">Status: ${f:h(order.status)}</td>
+            <td colspan="2">Status: ${fn:escapeXml(order.status)}</td>
         </tr>
         <tr>
             <td colspan="2">
@@ -119,32 +119,32 @@
                     <c:forEach var="lineItem" items="${order.lineItems}">
                         <tr>
                             <td><a
-                                href="${pageContext.request.contextPath}/catalog/viewItem?itemId=${f:h(lineItem.item.itemId)}">
-                                    ${f:h(lineItem.item.itemId)} </a></td>
+                                href="${pageContext.request.contextPath}/catalog/viewItem?itemId=${fn:escapeXml(lineItem.item.itemId)}">
+                                    ${fn:escapeXml(lineItem.item.itemId)} </a></td>
                             <td><c:if
                                     test="${lineItem.item != null}">
-                        ${f:h(lineItem.item.attribute1)}
-                        ${f:h(lineItem.item.attribute2)}
-                        ${f:h(lineItem.item.attribute3)}
-                        ${f:h(lineItem.item.attribute4)}
-                        ${f:h(lineItem.item.attribute5)}
-                        ${f:h(lineItem.item.product.name)}
+                        ${fn:escapeXml(lineItem.item.attribute1)}
+                        ${fn:escapeXml(lineItem.item.attribute2)}
+                        ${fn:escapeXml(lineItem.item.attribute3)}
+                        ${fn:escapeXml(lineItem.item.attribute4)}
+                        ${fn:escapeXml(lineItem.item.attribute5)}
+                        ${fn:escapeXml(lineItem.item.product.name)}
                     </c:if> <c:if test="${lineItem.item == null}">
                                     <i>{description unavailable}</i>
                                 </c:if></td>
 
-                            <td>${f:h(lineItem.quantity)}</td>
+                            <td>${fn:escapeXml(lineItem.quantity)}</td>
                             <td><fmt:formatNumber
-                                    value="${f:h(lineItem.unitPrice)}"
+                                    value="${fn:escapeXml(lineItem.unitPrice)}"
                                     pattern="$#,##0.00" /></td>
                             <td><fmt:formatNumber
-                                    value="${f:h(lineItem.total)}"
+                                    value="${fn:escapeXml(lineItem.total)}"
                                     pattern="$#,##0.00" /></td>
                         </tr>
                     </c:forEach>
                     <tr>
                         <th colspan="5">Total: <fmt:formatNumber
-                                value="${f:h(order.totalPrice)}"
+                                value="${fn:escapeXml(order.totalPrice)}"
                                 pattern="$#,##0.00" /></th>
                     </tr>
                 </table>

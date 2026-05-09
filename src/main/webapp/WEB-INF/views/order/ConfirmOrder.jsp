@@ -22,42 +22,42 @@
             </tr>
             <tr>
                 <td>First name:</td>
-                <td>${f:h(orderForm.billToFirstName)}<form:hidden
+                <td>${fn:escapeXml(orderForm.billToFirstName)}<form:hidden
                         path="billToFirstName" /></td>
             </tr>
             <tr>
                 <td>Last name:</td>
-                <td>${f:h(orderForm.billToLastName)}<form:hidden
+                <td>${fn:escapeXml(orderForm.billToLastName)}<form:hidden
                         path="billToLastName" /></td>
             </tr>
             <tr>
                 <td>Address 1:</td>
-                <td>${f:h(orderForm.billAddress1)}<form:hidden
+                <td>${fn:escapeXml(orderForm.billAddress1)}<form:hidden
                         path="billAddress1" /></td>
             </tr>
             <tr>
                 <td>Address 2:</td>
-                <td>${f:h(orderForm.billAddress2)}<form:hidden
+                <td>${fn:escapeXml(orderForm.billAddress2)}<form:hidden
                         path="billAddress2" /></td>
             </tr>
             <tr>
                 <td>City:</td>
-                <td>${f:h(orderForm.billCity)}<form:hidden
+                <td>${fn:escapeXml(orderForm.billCity)}<form:hidden
                         path="billCity" /></td>
             </tr>
             <tr>
                 <td>State:</td>
-                <td>${f:h(orderForm.billState)}<form:hidden
+                <td>${fn:escapeXml(orderForm.billState)}<form:hidden
                         path="billState" /></td>
             </tr>
             <tr>
                 <td>Zip:</td>
-                <td>${f:h(orderForm.billZip)}<form:hidden
+                <td>${fn:escapeXml(orderForm.billZip)}<form:hidden
                         path="billZip" /></td>
             </tr>
             <tr>
                 <td>Country:</td>
-                <td>${f:h(orderForm.billCountry)}<form:hidden
+                <td>${fn:escapeXml(orderForm.billCountry)}<form:hidden
                         path="billCountry" /></td>
             </tr>
             <tr>
@@ -65,43 +65,43 @@
             </tr>
             <tr>
                 <td>First name:</td>
-                <td>${f:h(orderForm.shipToFirstName)}<form:hidden
+                <td>${fn:escapeXml(orderForm.shipToFirstName)}<form:hidden
                         path="shipToFirstName" /></td>
             </tr>
             <tr>
                 <td>Last name:</td>
-                <td>${f:h(orderForm.shipToLastName)}<form:hidden
+                <td>${fn:escapeXml(orderForm.shipToLastName)}<form:hidden
                         path="shipToLastName" />
                 </td>
             </tr>
             <tr>
                 <td>Address 1:</td>
-                <td>${f:h(orderForm.shipAddress1)}<form:hidden
+                <td>${fn:escapeXml(orderForm.shipAddress1)}<form:hidden
                         path="shipAddress1" /></td>
             </tr>
             <tr>
                 <td>Address 2:</td>
-                <td>${f:h(orderForm.shipAddress2)}<form:hidden
+                <td>${fn:escapeXml(orderForm.shipAddress2)}<form:hidden
                         path="shipAddress2" /></td>
             </tr>
             <tr>
                 <td>City:</td>
-                <td>${f:h(orderForm.shipCity)}<form:hidden
+                <td>${fn:escapeXml(orderForm.shipCity)}<form:hidden
                         path="shipCity" /></td>
             </tr>
             <tr>
                 <td>State:</td>
-                <td>${f:h(orderForm.shipState)}<form:hidden
+                <td>${fn:escapeXml(orderForm.shipState)}<form:hidden
                         path="shipState" /></td>
             </tr>
             <tr>
                 <td>Zip:</td>
-                <td>${f:h(orderForm.shipZip)}<form:hidden
+                <td>${fn:escapeXml(orderForm.shipZip)}<form:hidden
                         path="shipZip" /></td>
             </tr>
             <tr>
                 <td>Country:</td>
-                <td>${f:h(orderForm.shipCountry)}<form:hidden
+                <td>${fn:escapeXml(orderForm.shipCountry)}<form:hidden
                         path="shipCountry" /></td>
             </tr>
 

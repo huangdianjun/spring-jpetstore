@@ -15,19 +15,19 @@
         <div id="SidebarContent">
             <a
                 href="${pageContext.request.contextPath}/catalog/viewCategory?categoryId=FISH"><img
-                src="${pageContext.request.contextPath}/resources/images/fish_icon.gif" />
+                src="${pageContext.request.contextPath}/images/fish_icon.gif" />
             </a> <br /> Saltwater, Freshwater <br /> <a
                 href="${pageContext.request.contextPath}/catalog/viewCategory?categoryId=DOGS"><img
-                src="${pageContext.request.contextPath}/resources/images/dogs_icon.gif" />
+                src="${pageContext.request.contextPath}/images/dogs_icon.gif" />
             </a> <br /> Various Breeds <br /> <a
                 href="${pageContext.request.contextPath}/catalog/viewCategory?categoryId=CATS"><img
-                src="${pageContext.request.contextPath}/resources/images/cats_icon.gif" />
+                src="${pageContext.request.contextPath}/images/cats_icon.gif" />
             </a> <br /> Various Breeds, Exotic Varieties <br /> <a
                 href="${pageContext.request.contextPath}/catalog/viewCategory?categoryId=REPTILES"><img
-                src="${pageContext.request.contextPath}/resources/images/reptiles_icon.gif" />
+                src="${pageContext.request.contextPath}/images/reptiles_icon.gif" />
             </a> <br /> Lizards, Turtles, Snakes <br /> <a
                 href="${pageContext.request.contextPath}/catalog/viewCategory?categoryId=BIRDS"><img
-                src="${pageContext.request.contextPath}/resources/images/birds_icon.gif" />
+                src="${pageContext.request.contextPath}/images/birds_icon.gif" />
             </a> <br /> Exotic Varieties
         </div>
     </div>
@@ -55,7 +55,7 @@
                     shape="RECT" />
             </map>
             <img height="355"
-                src="${pageContext.request.contextPath}/resources/images/splash.gif"
+                src="${pageContext.request.contextPath}/images/splash.gif"
                 align="middle" usemap="#estoremap" width="350" />
         </div>
     </div>

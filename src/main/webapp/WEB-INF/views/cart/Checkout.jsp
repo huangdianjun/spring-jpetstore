@@ -26,28 +26,28 @@
                     <c:forEach var="cartItem" items="${cart.cartItems}">
                         <tr>
                             <td><a
-                                href="${pageContext.request.contextPath}/catalog/viewItem?itemId=${f:h(cartItem.item.itemId)}">
-                                    ${f:h(cartItem.item.itemId)}</a></td>
-                            <td>${f:h(cartItem.item.product.productId)}</td>
-                            <td>${f:h(cartItem.item.attribute1)}
-                                ${f:h(cartItem.item.attribute2)}
-                                ${f:h(cartItem.item.attribute3)}
-                                ${f:h(cartItem.item.attribute4)}
-                                ${f:h(cartItem.item.attribute5)}
-                                ${f:h(cartItem.item.product.name)}</td>
-                            <td>${f:h(cartItem.inStock)}</td>
-                            <td>${f:h(cartItem.quantity)}</td>
+                                href="${pageContext.request.contextPath}/catalog/viewItem?itemId=${fn:escapeXml(cartItem.item.itemId)}">
+                                    ${fn:escapeXml(cartItem.item.itemId)}</a></td>
+                            <td>${fn:escapeXml(cartItem.item.product.productId)}</td>
+                            <td>${fn:escapeXml(cartItem.item.attribute1)}
+                                ${fn:escapeXml(cartItem.item.attribute2)}
+                                ${fn:escapeXml(cartItem.item.attribute3)}
+                                ${fn:escapeXml(cartItem.item.attribute4)}
+                                ${fn:escapeXml(cartItem.item.attribute5)}
+                                ${fn:escapeXml(cartItem.item.product.name)}</td>
+                            <td>${fn:escapeXml(cartItem.inStock)}</td>
+                            <td>${fn:escapeXml(cartItem.quantity)}</td>
                             <td><fmt:formatNumber
-                                    value="${f:h(cartItem.item.listPrice)}"
+                                    value="${fn:escapeXml(cartItem.item.listPrice)}"
                                     pattern="$#,##0.00" /></td>
                             <td><fmt:formatNumber
-                                    value="${f:h(cartItem.total)}"
+                                    value="${fn:escapeXml(cartItem.total)}"
                                     pattern="$#,##0.00" /></td>
                         </tr>
                     </c:forEach>
                     <tr>
                         <td colspan="7">Sub Total: <fmt:formatNumber
-                                value="${f:h(cart.subTotal)}"
+                                value="${fn:escapeXml(cart.subTotal)}"
                                 pattern="$#,##0.00" /></td>
                     </tr>
                 </table>

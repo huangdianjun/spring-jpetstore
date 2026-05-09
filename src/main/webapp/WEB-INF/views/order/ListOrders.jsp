@@ -12,10 +12,10 @@
     <c:forEach var="order" items="${orderList}">
         <tr>
             <td><a
-                href="${pageContext.request.contextPath}/order/viewOrder?orderId=${f:h(order.orderId)}">${f:h(order.orderId)}</a></td>
+                href="${pageContext.request.contextPath}/order/viewOrder?orderId=${fn:escapeXml(order.orderId)}">${fn:escapeXml(order.orderId)}</a></td>
             <td><fmt:formatDate value="${order.orderDate}"
                     pattern="yyyy/MM/dd hh:mm:ss" /></td>
-            <td><fmt:formatNumber value="${f:h(order.totalPrice)}"
+            <td><fmt:formatNumber value="${fn:escapeXml(order.totalPrice)}"
                     pattern="$#,##0.00" /></td>
         </tr>
     </c:forEach>

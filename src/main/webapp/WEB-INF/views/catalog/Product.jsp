@@ -2,8 +2,8 @@
 
 <div id="BackLink">
     <a
-        href="${pageContext.request.contextPath}/catalog/viewCategory?categoryId=${f:h(product.categoryId)}">Return
-        to ${f:h(product.categoryId)}</a>
+        href="${pageContext.request.contextPath}/catalog/viewCategory?categoryId=${fn:escapeXml(product.categoryId)}">Return
+        to ${fn:escapeXml(product.categoryId)}</a>
 </div>
 
 <div id="Catalog">
@@ -21,17 +21,17 @@
         <c:forEach var="item" items="${itemList}">
             <tr>
                 <td><a
-                    href="${pageContext.request.contextPath}/catalog/viewItem?itemId=${f:h(item.itemId)}">
-                        ${f:h(item.itemId)} </a></td>
-                <td>${f:h(item.product.productId)}</td>
-                <td>${f:h(item.attribute1)}${f:h(item.attribute2)}
-                    ${f:h(item.attribute3)} ${f:h(item.attribute4)}
-                    ${f:h(item.attribute5)} ${f:h(product.name)}</td>
+                    href="${pageContext.request.contextPath}/catalog/viewItem?itemId=${fn:escapeXml(item.itemId)}">
+                        ${fn:escapeXml(item.itemId)} </a></td>
+                <td>${fn:escapeXml(item.product.productId)}</td>
+                <td>${fn:escapeXml(item.attribute1)}${fn:escapeXml(item.attribute2)}
+                    ${fn:escapeXml(item.attribute3)} ${fn:escapeXml(item.attribute4)}
+                    ${fn:escapeXml(item.attribute5)} ${fn:escapeXml(product.name)}</td>
                 <td><fmt:formatNumber
-                        value="${f:h(item.listPrice)}"
+                        value="${fn:escapeXml(item.listPrice)}"
                         pattern="$#,##0.00" /></td>
                 <td><a
-                    href="${pageContext.request.contextPath}/cart/addItemToCart?workingItemId=${f:h(item.itemId)}">
+                    href="${pageContext.request.contextPath}/cart/addItemToCart?workingItemId=${fn:escapeXml(item.itemId)}">
                         Add to Cart</a></td>
             </tr>
         </c:forEach>

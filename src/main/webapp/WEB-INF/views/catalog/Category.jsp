@@ -7,7 +7,7 @@
 
 <div id="Catalog">
 
-    <h2>${f:h(category.name)}</h2>
+    <h2>${fn:escapeXml(category.name)}</h2>
 
     <table>
         <tr>
@@ -17,8 +17,8 @@
         <c:forEach var="product" items="${productList}">
             <tr>
                 <td><a
-                    href="${pageContext.request.contextPath}/catalog/viewProduct?productId=${f:h(product.productId)}">${f:h(product.productId)}</a></td>
-                <td>${f:h(product.name)}</td>
+                    href="${pageContext.request.contextPath}/catalog/viewProduct?productId=${fn:escapeXml(product.productId)}">${fn:escapeXml(product.productId)}</a></td>
+                <td>${fn:escapeXml(product.name)}</td>
             </tr>
         </c:forEach>
     </table>

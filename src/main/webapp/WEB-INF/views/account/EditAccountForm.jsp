@@ -9,7 +9,7 @@
         <table>
             <tr>
                 <td>User ID:</td>
-                <td>${f:h(accountForm.username)}</td>
+                <td>${fn:escapeXml(accountForm.username)}</td>
             </tr>
             <tr>
                 <td>New password:</td>

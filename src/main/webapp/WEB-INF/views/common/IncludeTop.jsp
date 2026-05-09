@@ -2,7 +2,7 @@
 <html>
 <head>
 <link rel="StyleSheet"
-    href="${pageContext.request.contextPath}/resources/css/jpetstore.css"
+    href="${pageContext.request.contextPath}/css/jpetstore.css"
     type="text/css" media="screen" />
 
 <title>JPetStore Demo</title>
@@ -20,7 +20,7 @@
             <div id="LogoContent">
                 <a href="${pageContext.request.contextPath}/catalog/">
                     <img
-                    src="${pageContext.request.contextPath}/resources/images/logo-topbar.gif" />
+                    src="${pageContext.request.contextPath}/images/logo-topbar.gif" />
                 </a>
             </div>
         </div>
@@ -30,9 +30,9 @@
                 <a
                     href="${pageContext.request.contextPath}/cart/viewCart">
                     <img align="middle" name="img_cart"
-                    src="${pageContext.request.contextPath}/resources/images/cart.gif" />
+                    src="${pageContext.request.contextPath}/images/cart.gif" />
                 </a> <img align="middle"
-                    src="${pageContext.request.contextPath}/resources/images/separator.gif" />
+                    src="${pageContext.request.contextPath}/images/separator.gif" />
 
                 <sec:authorize access="!isAuthenticated()">
                     <a
@@ -44,13 +44,13 @@
                         href="${pageContext.request.contextPath}/account/signoff">
                         Sign Out </a>
                     <img align="middle"
-                        src="${pageContext.request.contextPath}/resources/images/separator.gif" />
+                        src="${pageContext.request.contextPath}/images/separator.gif" />
                     <a
                         href="${pageContext.request.contextPath}/account/editAccountForm">
                         My Account </a>
                 </sec:authorize>
                 <!--                 <img align="middle" -->
-                <%--                     src="${pageContext.request.contextPath}/resources/images/separator.gif" /> --%>
+                <%--                     src="${pageContext.request.contextPath}/images/separator.gif" /> --%>
                 <%--                 <a href="${pageContext.request.contextPath}/help.html">?</a> --%>
             </div>
         </div>
@@ -70,27 +70,27 @@
         <div id="QuickLinks">
             <a
                 href="${pageContext.request.contextPath}/catalog/viewCategory?categoryId=FISH"><img
-                src="${pageContext.request.contextPath}/resources/images/sm_fish.gif" />
+                src="${pageContext.request.contextPath}/images/sm_fish.gif" />
             </a> <img
-                src="${pageContext.request.contextPath}/resources/images/separator.gif" />
+                src="${pageContext.request.contextPath}/images/separator.gif" />
             <a
                 href="${pageContext.request.contextPath}/catalog/viewCategory?categoryId=DOGS"><img
-                src="${pageContext.request.contextPath}/resources/images/sm_dogs.gif" />
+                src="${pageContext.request.contextPath}/images/sm_dogs.gif" />
             </a> <img
-                src="${pageContext.request.contextPath}/resources/images/separator.gif" />
+                src="${pageContext.request.contextPath}/images/separator.gif" />
             <a
                 href="${pageContext.request.contextPath}/catalog/viewCategory?categoryId=REPTILES"><img
-                src="${pageContext.request.contextPath}/resources/images/sm_reptiles.gif" />
+                src="${pageContext.request.contextPath}/images/sm_reptiles.gif" />
             </a> <img
-                src="${pageContext.request.contextPath}/resources/images/separator.gif" />
+                src="${pageContext.request.contextPath}/images/separator.gif" />
             <a
                 href="${pageContext.request.contextPath}/catalog/viewCategory?categoryId=CATS"><img
-                src="${pageContext.request.contextPath}/resources/images/sm_cats.gif" />
+                src="${pageContext.request.contextPath}/images/sm_cats.gif" />
             </a> <img
-                src="${pageContext.request.contextPath}/resources/images/separator.gif" />
+                src="${pageContext.request.contextPath}/images/separator.gif" />
             <a
                 href="${pageContext.request.contextPath}/catalog/viewCategory?categoryId=BIRDS"><img
-                src="${pageContext.request.contextPath}/resources/images/sm_birds.gif" />
+                src="${pageContext.request.contextPath}/images/sm_birds.gif" />
             </a>
         </div>
 
@@ -98,5 +98,5 @@
 
     <div id="Content">
         <c:if test="${!empty message}">
-            <p>${f:h(message)}</p>
+            <p>${fn:escapeXml(message)}</p>
         </c:if>

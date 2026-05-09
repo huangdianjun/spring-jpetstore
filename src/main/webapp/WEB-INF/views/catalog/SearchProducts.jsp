@@ -16,13 +16,13 @@
         <c:forEach var="product" items="${productList}">
             <tr>
                 <td><a
-                    href="${pageContext.request.contextPath}/catalog/viewProduct?productId=${f:h(product.productId)}">${product.description}<%--  XSS Vulnerable! --%></a></td>
+                    href="${pageContext.request.contextPath}/catalog/viewProduct?productId=${fn:escapeXml(product.productId)}">${product.description}<%--  XSS Vulnerable! --%></a></td>
                 <td><b> <a
-                        href="${pageContext.request.contextPath}/catalog/viewProduct?productId=${f:h(product.productId)}"><font
+                        href="${pageContext.request.contextPath}/catalog/viewProduct?productId=${fn:escapeXml(product.productId)}"><font
                             color="BLACK">
-                                ${f:h(product.productId)} </font></a>
+                                ${fn:escapeXml(product.productId)} </font></a>
                 </b></td>
-                <td>${f:h(product.name)}</td>
+                <td>${fn:escapeXml(product.name)}</td>
             </tr>
         </c:forEach>
     </table>

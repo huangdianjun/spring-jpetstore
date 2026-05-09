@@ -2,14 +2,17 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sec="http://www.springframework.org/schema/security"
     xmlns:context="http://www.springframework.org/schema/context"
-    xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd
+    xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-5.7.xsd
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
     <sec:http security="none" pattern="/resources/**" />
     <sec:http auto-config="true" use-expressions="true">
+        <sec:csrf disabled="true" />
         <sec:form-login login-page="/account/signonForm"
             login-processing-url="/account/signon"
+            username-parameter="j_username"
+            password-parameter="j_password"
             authentication-failure-url="/account/signonForm?error=true" />
         <sec:logout delete-cookies="JSESSIONID" logout-url="/account/signoff"
             logout-success-url="/" />
@@ -24,4 +27,7 @@
             <sec:password-encoder ref="passwordEncoder" />
         </sec:authentication-provider>
     </sec:authentication-manager>
+
+    <bean id="passwordEncoder" class="ik.am.jpetstore.domain.service.user.PlainTextPasswordEncoder" />
+
 </beans>

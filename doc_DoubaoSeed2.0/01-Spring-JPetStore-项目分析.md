@@ -323,6 +323,54 @@ INSERT INTO ACCOUNT VALUES ('j2ee', 'yourname@yourdomain.com', ...);
 2. 执行 H2-dataload.sql 加载数据
 3. **注意**：H2 是内存数据库，重启应用后数据会重置！
 
+
+#### 🗄️ 查询 H2 数据库的方法
+本项目使用 H2 内存数据库 ，我来告诉你几种查询方式：
+
+##### 方法 1：使用 H2 控制台（推荐，最直观）
+H2 自带一个 Web 控制台，你可以用它直接查询数据库：
+ 步骤 1：先启动项目
+```
+cd d:\Project\Java\spring-jpetstore
+mvn tomcat7:run
+``` 步骤 2：访问 H2 控制台
+等项目启动后，浏览器打开：
+
+```
+http://localhost:8088/spring-jpetstore/h2-console
+``` 步骤 3：配置连接参数
+在控制台页面输入：
+   | 配置项 | 值 |
+   |--------|-----|
+   | Driver Class | org.h2.Driver |
+   | JDBC URL | jdbc:h2:mem:spring-petstore;MODE=PostgreSQL |
+   | 用户名 | sa |
+   | 密码 | （留空） |
+点击「Connect」就可以查询了！   
+
+ 步骤 4：查询数据
+点击「Connect」连接后，你就可以执行 SQL 了！例如：
+
+```
+-- 查询所有用户
+SELECT * FROM SIGNON;
+
+-- 查询商品
+SELECT * FROM PRODUCT;
+
+-- 查询购物车示例
+SELECT * FROM ACCOUNT;
+```
+##### 方法 2：查看数据库初始化脚本（了解数据结构）
+项目的数据库初始化脚本在：
+
+```
+d:\Project\Java\spring-jpetstore\src\main\resources\database\
+├── H2-ddl.sql          # 建表语句
+└── H2-dataload.sql     # 初始数据
+```
+你可以直接查看 H2-dataload.sql 了解有哪些数据。
+
 ## 六、启动和部署
 
 ### 6.1 开发环境启动
